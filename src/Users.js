@@ -7,15 +7,15 @@ import Button from '@material-ui/core/Button';
 import { Intial_users } from './Intial_users';
 
 
-const BASE_URL = "https://abdul-mykartapp.herokuapp.com/data"
+const BASE_URL = "https://abdul-mykartapp.herokuapp.com"
 export function Users() {
 
   const [users, setUsers] =useState([]);
   const [username, setUsername] = useState("")
   const [userpic, setUserpic] = useState("")
 
-  function getUsers(){
-    fetch(`${BASE_URL}`,{
+  function getUsers(data){
+    fetch(`${BASE_URL}/${data}`,{
       method: "GET",
     })
     .then(data => data.json())
@@ -23,8 +23,8 @@ export function Users() {
 
   }
 
-  function deleteUsers(id) {
-    fetch(`${BASE_URL}/${id}`,{
+  function deleteUsers(data,id) {
+    fetch(`${BASE_URL}/${data}/${id}`,{
       method: "DELETE",
     })
     .then(data => data.json()) 
