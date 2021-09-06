@@ -23,13 +23,14 @@ export function Users() {
 
   }
 
-  function deleteUsers(data,id) {
-    fetch(`${BASE_URL}/${data}/${id}`,{
+  function deleteUsers(id) {
+    fetch(`${BASE_URL}/data/${id}`,{
       method: "DELETE",
     })
     .then(data => data.json()) 
     .then((user) => console.log(user))
     .then(() =>getUsers())
+    
   }
 
 
