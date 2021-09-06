@@ -14,8 +14,8 @@ export function Users() {
   const [username, setUsername] = useState("")
   const [userpic, setUserpic] = useState("")
 
-  function getUsers(data){
-    fetch(`${BASE_URL}/${data}`,{
+  function getUsers(){
+    fetch(`${BASE_URL}/data`,{
       method: "GET",
     })
     .then(data => data.json())
@@ -35,7 +35,7 @@ export function Users() {
 
 
 function createUser(){
-  fetch(`${BASE_URL}`,{
+  fetch(`${BASE_URL}/createuser`,{
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({name:username,pic:userpic}),
