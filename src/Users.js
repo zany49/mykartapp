@@ -36,7 +36,7 @@ export function Users() {
 
 
 function createUser(){
-  fetch(`${BASE_URL}/createuser`,{
+  fetch(`${BASE_URL}/data/createuser`,{
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({name:username,pic:userpic}),
