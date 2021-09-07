@@ -76,7 +76,7 @@ export function Brands() {
             type="text" placeholder="search" /> */}
             <TextField type="text" value={search}
           onChange={(event) => setsearch(event.target.value)}
-          placeholder="search" variant="outlined" label="name" />
+          placeholder="search" variant="outlined" label="model-name" />
             {/* <input type="text" value={search}
           onChange={(event) => setsearch(event.target.value)}
           placeholder="search" />{search} */}
