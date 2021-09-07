@@ -19,7 +19,8 @@ export function Users() {
       method: "GET",
     })
     .then(data => data.json())
-    .then(users =>setUsers(users))
+    .then(users =>{console.log(users)})
+    
 
   }
 
