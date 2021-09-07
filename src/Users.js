@@ -19,7 +19,7 @@ export function Users() {
       method: "GET",
     })
     .then(data => data.json())
-    .then(users =>{console.log(users)})
+    .then(users =>setUsers(users));
     
 
   }
@@ -47,15 +47,15 @@ console.log('createUser')
 }
 
 
-function updateUser(id){
-  fetch(`${BASE_URL}/${id}`,{
+function updateUser(){
+  fetch(`${BASE_URL}/_id`,{
       method: "PUT",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({name:username,pic:userpic}),
     })
     .then(data => data.json())
     .then(() =>getUsers());
-     
+   
 }
     useEffect(()=> {
       getUsers();
