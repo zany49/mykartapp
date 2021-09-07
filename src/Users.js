@@ -24,8 +24,8 @@ export function Users() {
 
   }
 
-  function deleteUsers(id) {
-    fetch(`${BASE_URL}/data/${id}`,{
+  function deleteUsers(_id) {
+    fetch(`${BASE_URL}/data/${_id}`,{
       method: "DELETE",
     })
     .then(data => data.json()) 
@@ -90,7 +90,7 @@ function updateUser(id){
             <img src={pic} alt='propic' style={{borderRadius:'50%', height:'76px' , width:'75px', objectFit:'cover'}}></img>
             <h2>name: {name}</h2>
             <button
-            onClick={()=>deleteusers(id)}
+            onClick={()=>deleteusers(_id)}
             >delete</button> <button
             onClick={()=>updateusers(id)}
             >update</button>
